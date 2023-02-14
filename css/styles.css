@@ -6,7 +6,7 @@
   --primary-text-color: #fff;
   --secondary-text-color: #333;
   --input-placeholder: #d3d3d3;
-  --light-color: #fff
+  --light-color: #fff;
 }
 
 * {
@@ -69,56 +69,53 @@ nav {
   opacity: 1;
 }
 
-.switch {
-    padding-top: 2px;
-}
-
 .theme-switch {
-    display: inline-block;
-    height: 22px;
-    position: relative;
-    width: 48px;
+  display: inline-block;
+  height: 22px;
+  position: relative;
+  width: 48px;
 }
 
 .theme-switch input {
-    display: none;
+  display: none;
 }
 
 .slider {
-    background-color: #ccc;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    position: absolute;
-    transition: 0.4s;
+  background-color: #ccc;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  position: absolute;
+  transition: 0.4s;
 }
 
-.slider::before {
-    background-color: #fff;
-    bottom: 1px;
-    left: 1px;
-    content:'';
-    height: 20px;
-    position: absolute;
-    transition: 0.4px;
-    width: 20px;
+.slider:before {
+  background-color: #fff;
+  bottom: 1px;
+  left: 1px;
+  content: '';
+  height: 20px;
+  position: absolute;
+  transition: 0.4s;
+  width: 20px;
 }
 
 .theme-switch input:checked + .slider {
-    background-color: #2b2b2b;
+  background-color: #2b2b2b;
 }
 
 .theme-switch input:checked + .slider:before {
-    transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
-.slider.round::before {
-    border-radius: 50%;
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .contact {
@@ -127,9 +124,6 @@ nav {
   color: var(--primary-text-color);
   position: relative;
 }
-
-
-
 
 .contact h1 {
   font-size: 40px;
@@ -146,7 +140,7 @@ nav {
 }
 
 .contact-text {
-    animation: slideFromLeft 1s ease-in;
+  animation: slideFromLeft 1s ease-in;
 }
 
 .contact-form {
@@ -155,7 +149,7 @@ nav {
   height: 350px;
   width: 400px;
   z-index: 10;
-  animation:  slideFromRight 1s ease-in;
+  animation: slideFromRight 1s ease-in;
 }
 
 .contact-form input[type='text'],
@@ -184,12 +178,16 @@ nav {
   bottom: -70px;
   right: 0;
   left: 0;
-  background-color: var(--primary-text-color);
+  background-color: var(--light-color);
   transform: skewY(-3deg);
 }
 
 .contact-form .form-control {
   margin: 32px 0;
+}
+
+.contact-form h2 {
+  color: var(--primary-color);
 }
 
 .about {
@@ -277,11 +275,13 @@ nav {
 
   .contact-text {
     text-align: center;
+    animation: slideFromTop 1s ease-in;
   }
 
   .contact-form {
     justify-self: center;
     width: 300px;
+    animation: slideFromBottom 1s ease-in;
   }
 }
 
@@ -306,38 +306,48 @@ nav {
   }
 }
 
-
-
 /* Animations */
-@keyframes  slideFromLeft {
-   0% { transform: translateX(-100%);
-}
-100% {
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
     transform: translateX(0);
+  }
 }
 
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-@keyframes  slideFromRight {
-    0% { transform: translateX(100%);
- }
- 100% {
-     transform: translateX(0);
- }
- 
- }
+
 @keyframes slideFromBottom {
-    0% {
-        transform: translateY((100%));
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY((100%));
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
+
 @keyframes slideFromTop {
-    0% {
-        transform: translateY((-100%));
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY((-100%));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
